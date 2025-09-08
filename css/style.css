@@ -1,0 +1,259 @@
+*{
+ margin:0;
+ padding:0;
+ box-sizing: border-box; 
+ 
+}
+
+.top-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+.logo img{
+  max-width: 200px;
+  height: auto;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.hero-text h1{
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+.section-nav {
+  background-color: #fff;
+  padding: 15px 0;
+}
+
+.section-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.section-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.section-nav a:hover {
+  color: #d32f2f;
+}
+
+.about-section {
+  padding: 60px 20px;
+  margin-bottom: 10px;
+  color:  #333;
+  text-align: left;
+  
+}
+
+.about-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  
+}
+
+.about-section h2 {
+  font-size:  2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.about-section h3 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px 0;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;  
+}
+
+.about-section ul li {
+  margin-bottom:  15px;
+  line-height:  1.6;
+}
+
+.tour-highlights {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+.tour-highlights .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-highlights h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.highlight-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.highlight-card:hover {
+  transform:translate (-5px);
+}
+
+.highlight-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.highlight-card h3 {
+  font-size: 1.3rem;
+  margin: 15px;
+}
+
+.highlight-card p {
+  font-size: 1rem;
+  margin: 0 15px 15px 15px;
+  line-height: 1.5;
+}
+
+.quick-details {
+ padding: 60px 20px;
+ background-color: #f9f9f9;
+ text-align: center;
+}
+
+.detail-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.detail-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.detail-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.detail-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+  z-index: 9999;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+}
+
+/* Static Booking Button */
+.btn-book {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #e63946; /* red highlight */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: #d62828; /* darker red */
+}
+
+.btn-wrapper {
+  text-align: center; /* only centers the button */
+  margin-top: 20px;   /* space above the button */
+}
+
+.btn-book {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #25d366; /* WhatsApp green */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: #1ebe5d;
+}
+
+
