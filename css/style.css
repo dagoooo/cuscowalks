@@ -328,4 +328,27 @@
   background: #e67e22;
 }
 
+#meeting-point {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+#meeting-point h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#meeting-point p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+
 
