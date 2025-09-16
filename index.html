@@ -40,8 +40,8 @@
   <nav class="section-nav">
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#photos">Photos</a></li>
-      <li><a href="#blog">Blog</a></li>
+      <li><a href="#tour-highlights">Tour Highlights</a></li>
+      <li><a href="#quick-details">Details</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#other-tours">Other Tours</a></li>
@@ -138,6 +138,51 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Scroll button (place near your WhatsApp button or intro text) -->
+<a href="#bookingForm" class="btn-scroll">Book with Form</a>
+
+<!-- Booking Form -->
+<form id="bookingForm" action="https://formspree.io/f/xqadvkop" method="POST">
+  <input type="hidden" name="_redirect" value="https://waldotours.com/thank-you.html">
+
+  <h2>Book Your Walking Tour</h2>
+
+  <label for="tourDate">Tour Date</label>
+  <input type="date" id="tourDate" name="tourDate" required>
+
+  <label for="fullName">Full Name</label>
+  <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+  <label for="nationality">Nationality</label>
+  <input type="text" id="nationality" name="nationality" placeholder="e.g. USA, Peru, France" required>
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" placeholder="+51 987 654 321" required>
+
+  <label for="tourTime">Tour Time</label>
+  <select id="tourTime" name="tourTime" required>
+    <option value="">-- Select a time --</option>
+    <option value="10am">10:00 AM</option>
+    <option value="1:30pm">1:30 PM</option>
+    <option value="3:30pm">3:30 PM</option>
+  </select>
+
+  <label for="numPeople">Number of People</label>
+  <input type="number" id="numPeople" name="numPeople" min="1" required>
+
+  <label for="additionalInfo">Additional Info</label>
+  <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Any special requests or notes?"></textarea>
+
+  <button type="submit">Submit Booking</button>
+</form>
+
+
+
 
   
 

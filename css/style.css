@@ -87,7 +87,7 @@
 }
 
 .about-section {
-  padding: 60px 20px;
+  padding: 20px 20px;
   margin-bottom: 10px;
   color:  #333;
   text-align: left;
@@ -122,7 +122,7 @@
 }
 
 .tour-highlights {
-  padding: 60px 20px;
+  padding: 10px 20px;
   background-color: #fff;
   color: #333;
 }
@@ -254,6 +254,78 @@
 
 .btn-book:hover {
   background-color: #1ebe5d;
+}
+
+
+/* Scroll button style */
+.btn-scroll {
+  display: inline-block;
+  background: #ff914d;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+.btn-scroll:hover {
+  background: #e67e22;
+}
+
+/* Booking form */
+#bookingForm {
+  max-width: 450px;
+  width: 90%;
+  margin: 60px auto;
+  padding: 25px;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  font-family: Arial, sans-serif;
+}
+
+#bookingForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#bookingForm label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #444;
+}
+
+#bookingForm input,
+#bookingForm select,
+#bookingForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#bookingForm textarea {
+  resize: vertical;
+}
+
+#bookingForm button {
+  width: 100%;
+  background: #ff914d;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#bookingForm button:hover {
+  background: #e67e22;
 }
 
 
