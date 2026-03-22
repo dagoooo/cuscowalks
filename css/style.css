@@ -374,3 +374,7 @@ form .submit-btn {
   margin: 12px auto 0 auto;
   /* top margin 12px, left/right auto */
 }
+
+<div style="flex:1; min-width:220px; text-align:center; display:flex; flex-direction:column; align-items:center;"><img src="images/galerria_fotos/IMG_E6236.jpg"
+alt="Waldo, local tour guide in Cusco"
+style="width:100%; max-width:260px; border-radius:12px;"><p style="font-size:14px; color:gray; margin-top:8px;">Waldo guiding a small group in Cusco </p></div>
