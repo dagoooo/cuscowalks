@@ -1,22 +1,17 @@
 /* ---------- Painterly Theme Colors ---------- */
 :root {
-  --primary-dark: #1f4d3a;
-  /* deep Andean green */
-  --primary-light: #2f6b52;
-  /* lighter Andean green */
-  --accent-gold: #ffd24a;
-  /* gold / warm highlights */
-  --accent-terra: #e07b39;
-  /* terracotta / warm earthy tones */
-  --bg-light: #fefcf7;
-  /* creamy background */
-  --muted: #6b6b6b;
-  /* soft text */
-  --card-bg: #fffaf3;
-  /* soft card background */
-  --shadow: rgba(31, 77, 58, 0.18);
-  /* green-tinted shadow */
-  --radius: 16px;
+  --primary: #1e2a38;
+  /* dark blue/gray */
+  --secondary: #2f3e4d;
+  /* softer dark */
+  --accent: #25a55f;
+  /* green CTA (WhatsApp feeling) */
+  --bg: #ffffff;
+  --text: #222;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+
+  --radius: 8px;
 }
 
 /* ---------- Base Styles ---------- */
@@ -28,7 +23,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: 'Merriweather', serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: #222;
   background: var(--bg-light);
 }
@@ -55,11 +50,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: linear-gradient(180deg,
-      var(--primary-dark),
-      var(--primary-light));
+  background: var(--primary);
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(6px);
-  border-bottom: 2px solid var(--accent-gold);
 }
 
 .nav {
@@ -137,7 +130,7 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.5);
   mix-blend-mode: multiply;
 }
 
@@ -151,8 +144,8 @@ nav a:hover {
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 44px;
-  color: var(--accent-gold);
+  font-size: 36px;
+  color: #fff;
   text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -179,12 +172,12 @@ p.lead {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-terra));
-  color: #111;
+  background: var(--accent);
+  color: #fff;
   font-weight: 800;
   padding: 14px 20px;
-  border-radius: 14px;
-  box-shadow: 0 12px 28px var(--shadow);
+  border-radius: 6px;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
@@ -212,10 +205,11 @@ p.lead {
 }
 
 .card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 12px 32px var(--shadow);
+  box-shadow: none;
 }
 
 .card:hover {
@@ -374,7 +368,3 @@ form .submit-btn {
   margin: 12px auto 0 auto;
   /* top margin 12px, left/right auto */
 }
-
-<div style="flex:1; min-width:220px; text-align:center; display:flex; flex-direction:column; align-items:center;"><img src="images/galerria_fotos/IMG_E6236.jpg"
-alt="Waldo, local tour guide in Cusco"
-style="width:100%; max-width:260px; border-radius:12px;"><p style="font-size:14px; color:gray; margin-top:8px;">Waldo guiding a small group in Cusco </p></div>
