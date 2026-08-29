@@ -1,451 +1,534 @@
-/* ---------- Painterly Theme Colors ---------- */
+/* ==========================================================================
+   1. Base Setup & Variables (Warm Andean Palette)
+   ========================================================================== */
 :root {
-  --primary: #1e2a38;
-  --primary-dark: #111a24;
-  --primary-light: #2c3e50;
-  --secondary: #2f3e4d;
-
-  /* Accent Palette */
-  --accent: #25a55f;
-  --accent-gold: #d4af37;
-  --accent-terra: #c96b3b;
-
-  /* Neutral Palette */
-  --bg: #ffffff;
-  --bg-light: #f8fafc;
-  --text: #1e293b;
-  --muted: #64748b;
-  --border: #e2e8f0;
-  --card-bg: #ffffff;
-
-  /* Shadows & Radius */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-  --radius: 12px;
+  --primary-color: #B23A22;
+  /* Deep Terracotta / Rust */
+  --primary-hover: #8F2B17;
+  --secondary-color: #1E293B;
+  /* Rich Dark Slate / Charcoal */
+  --bg-light: #FAF8F5;
+  /* Warm Sand / Cream */
+  --bg-card: #FFFFFF;
+  --text-main: #4A5568;
+  /* Muted body text */
+  --accent-gold: #D97706;
+  /* Warm Andean Gold */
+  --whatsapp-color: #25D366;
+  /* Official WhatsApp Green */
+  --whatsapp-hover: #1EBE5D;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --max-width: 1100px;
+  --radius: 10px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-/* ---------- Base Styles ---------- */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html,
 body {
-  height: 100%;
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg-light);
-  line-height: 1.5;
+  font-family: var(--font-family);
+  color: var(--text-main);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--secondary-color);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  color: inherit;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+/* ==========================================================================
+   2. Buttons & Hero Callouts
+   ========================================================================== */
+.btn-primary,
+.btn-hero,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
   border-radius: var(--radius);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
-.wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px 24px;
+.btn-primary,
+.btn-hero {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
 }
 
-/* ---------- Header ---------- */
+.btn-primary:hover,
+.btn-hero:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-hero {
+  font-size: 1.1rem;
+  padding: 0.85rem 2rem;
+}
+
+.hero-cta-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.hero-subtext {
+  font-size: 0.9rem;
+  color: #FEF3C7;
+  font-weight: 500;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  margin-top: auto;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+}
+
+.btn-secondary-light {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  background-color: #FFFFFF;
+  color: var(--secondary-color);
+  border: 1px solid #CBD5E1;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary-light:hover {
+  background-color: #F1F5F9;
+}
+
+/* ==========================================================================
+   3. Header & Navigation
+   ========================================================================== */
 header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
   position: sticky;
   top: 0;
-  z-index: 999;
-  /* Converted to hex + alpha for backdrop-filter to function */
-  background: rgba(30, 42, 56, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-md);
+  z-index: 100;
 }
 
-.nav {
+nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
-  color: #fff;
-  gap: 20px;
-}
-
-.brand {
-  display: flex;
-  gap: 14px;
   align-items: center;
 }
 
-.logo {
-  width: 54px;
-  height: 54px;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-  color: var(--accent-gold);
-  font-size: 20px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.logo a {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
 }
 
 nav ul {
   display: flex;
-  gap: 8px;
-  align-items: center;
-  margin: 0;
-  padding: 0;
   list-style: none;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 nav a {
-  padding: 8px 16px;
-  font-weight: 600;
-  font-size: 14px;
-  border-radius: 8px;
+  font-weight: 500;
+  color: var(--secondary-color);
 }
 
 nav a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
 }
 
-.cta {
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-terra));
-  color: #fff !important;
-  padding: 10px 20px;
-  font-weight: 700;
-  box-shadow: var(--shadow-md);
-  border-radius: 999px;
-}
-
-.cta:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-lg);
-  filter: brightness(1.05);
-}
-
-/* ---------- Hero Section ---------- */
+/* ==========================================================================
+   4. Hero Section
+   ========================================================================== */
 .hero {
-  position: relative;
-  min-height: 550px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: url('../images/galerria_fotos/wallpaper.JPG') center/cover no-repeat;
-  border-bottom: 6px solid var(--accent-gold);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  padding: 64px 24px;
-  max-width: 720px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-h1 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 48px;
-  line-height: 1.15;
-  color: #fff;
-  margin-top: 16px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-p.lead {
-  font-size: 1.125rem;
-  color: #f1f5f9;
-  line-height: 1.7;
-  margin: 20px 0 32px;
-}
-
-.eyebrow {
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 6px 16px;
-  border-radius: 999px;
-  color: var(--accent-gold);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: inline-block;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  padding: 14px 28px;
-  border-radius: 999px;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  filter: brightness(1.1);
-}
-
-.btn-outline {
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  padding: 12px 26px;
-  border-radius: 999px;
-  color: #fff;
-  background: transparent;
-  font-weight: 600;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #fff;
-}
-
-/* ---------- Sections ---------- */
-.section {
-  padding: 64px 24px;
-}
-
-h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 32px;
-  color: var(--primary-dark);
-  margin-bottom: 16px;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('../images/cusco_walks_tours/wallpaper.JPG') center/cover no-repeat;
+  color: #FFFFFF;
   text-align: center;
+  padding: 5.5rem 1.5rem;
+  margin-bottom: 3.5rem;
 }
 
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.hero h1 {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.hero p {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin: 0 auto;
+  color: #F1F5F9;
 }
 
-/* ---------- Cards Grid ---------- */
-.grid-cards {
+/* ==========================================================================
+   5. Value Pillars
+   ========================================================================== */
+.value-props {
+  max-width: var(--max-width);
+  margin: 0 auto 4rem auto;
+  padding: 0 1.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  gap: 2rem;
 }
 
-.place-card {
+.prop-card {
+  background: var(--bg-card);
+  padding: 2rem;
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--primary-color);
+}
+
+.prop-card h3 {
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   6. Tour Products Grid & Images
+   ========================================================================== */
+.tour-categories {
+  max-width: var(--max-width);
+  margin: 0 auto 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.tour-categories h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-main);
+  margin-bottom: 2.5rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.tour-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   overflow: hidden;
-  background: var(--card-bg);
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 4px solid var(--primary-color);
 }
 
-.place-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-}
-
-.place-thumb {
+.card-media {
+  width: 100%;
   height: 200px;
-  background: #f1f5f9 center/cover no-repeat;
-  border-bottom: 4px solid var(--accent-gold);
+  background-color: #E2E8F0;
+  overflow: hidden;
 }
 
-.place-body {
-  padding: 20px;
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.place-title {
-  font-weight: 800;
-  color: var(--primary-dark);
-  margin-bottom: 8px;
-  font-size: 18px;
+.card-badge {
+  display: inline-block;
+  background-color: #FEF3C7;
+  color: #92400E;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  align-self: flex-start;
 }
 
-.place-desc {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
+.tour-card h3 {
+  font-size: 1.3rem;
 }
 
-/* ---------- Trust Strip ---------- */
-.trust-strip {
-  background: linear-gradient(135deg, rgba(31, 77, 58, 0.04), rgba(47, 107, 82, 0.04));
-  border-top: 2px solid var(--accent-gold);
-  border-bottom: 2px solid var(--accent-gold);
-  padding: 40px 0;
+.tour-card p {
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
 }
 
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1200px;
+.tour-meta {
+  list-style: none;
+  border-top: 1px solid #E2E8F0;
+  margin-top: auto;
+  padding-top: 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.tour-meta li {
+  margin-bottom: 0.3rem;
+}
+
+/* ==========================================================================
+   7. Personal About Section & Guide Portrait
+   ========================================================================== */
+.about-section {
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 4rem 1.5rem;
+}
+
+.about-container {
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
-.trust-item {
-  background: var(--card-bg);
-  padding: 24px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.about-media {
+  flex-shrink: 0;
 }
 
-.trust-item:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  background-color: #E2E8F0;
+  display: block;
 }
 
-/* ---------- Footer ---------- */
-footer {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
-  color: #fff;
-  padding: 48px 24px;
-  border-radius: var(--radius);
-  margin: 40px 24px 24px;
+.about-text h2 {
+  font-size: 2rem;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   8. Reviews Section
+   ========================================================================== */
+.reviews-section {
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.reviews-section h2 {
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* ---------- WhatsApp Floating Widget ---------- */
-.whatsapp {
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.review-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: left;
+  border-left: 4px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  color: #D97706;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.stars span {
+  font-size: 0.85rem;
+  color: #64748B;
+  font-weight: 500;
+  margin-left: 0.4rem;
+}
+
+.review-card p {
+  font-style: italic;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.review-card cite {
+  display: block;
+  margin-top: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.review-date {
+  font-weight: 400;
+  color: #64748B;
+}
+
+/* ==========================================================================
+   9. Call to Action & Floating WhatsApp
+   ========================================================================== */
+.cta-section {
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-color: #FEF3C7;
+  border-radius: var(--radius);
+}
+
+.cta-section h2 {
+  color: #92400E;
+}
+
+.cta-section p {
+  margin-bottom: 1.5rem;
+  color: #78350F;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-response-tag {
+  margin-top: 1.25rem !important;
+  margin-bottom: 0 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #B45309 !important;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
   width: 60px;
   height: 60px;
-  background-color: #25d366;
-  border-radius: 50%;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--whatsapp-color);
+  color: #FFFFFF;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-  z-index: 9999;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
-  animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
 }
 
-.whatsapp img {
+.whatsapp-float:hover {
+  background-color: var(--whatsapp-hover);
+  transform: scale(1.1);
+}
+
+.whatsapp-icon {
   width: 32px;
   height: 32px;
+  fill: #FFFFFF;
 }
 
-.whatsapp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
-  animation: none;
-  /* Stop pulsing animation on hover */
+/* ==========================================================================
+   10. Footer & Responsive Design
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: #9CA3AF;
+  font-size: 0.9rem;
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-  }
-
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
+.footer-email {
+  margin-top: 0.5rem;
 }
 
-/* ---------- Responsive Breakpoints ---------- */
-@media (max-width: 991px) {
-  .trust-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.footer-email a {
+  color: #E2E8F0;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-  .wrap {
-    padding: 20px 16px;
-  }
-
-  .nav {
+  nav {
     flex-direction: column;
-    padding: 16px;
-    gap: 16px;
+    gap: 1rem;
   }
 
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px;
+  .about-container {
+    flex-direction: column;
+    text-align: center;
   }
 
-  nav a {
-    font-size: 13px;
-    padding: 6px 12px;
+  .hero h1 {
+    font-size: 1.8rem;
   }
 
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-content {
-    padding: 40px 16px;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  p.lead {
+  .hero p {
     font-size: 1rem;
   }
 
-  .trust-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
   }
 
-  .section {
-    padding: 40px 16px;
+  .whatsapp-icon {
+    width: 26px;
+    height: 26px;
   }
 }
